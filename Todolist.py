@@ -26,7 +26,7 @@ class ToDoApp:
         self.load_tasks()
 
     def add_task(self):
-        task = simpledialog.askstring("เพิ่มงาน", "พิมพ์ชื่องานที่ต้องทำ:")
+        task = simpledialog.askstring("เพิ่มงาน", "พิมพ์ชื่องานที่ต้องทำ : ")
         if task:
             self.tasks.append(task)
             self.update_listbox()
