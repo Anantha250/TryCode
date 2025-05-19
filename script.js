@@ -1,6 +1,6 @@
-// Wait for the DOM to be fully loaded
+// รอให้ DOM โหลดเสร็จสมบูรณ์
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+    // สลับเมนูมือถือ
     const menuToggle = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
             
-            // Toggle menu icon animation
+            // สลับแอนิเมชันไอคอนเมนู
             const bars = menuToggle.querySelectorAll('.bar');
             if (menuToggle.classList.contains('active')) {
                 bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close mobile menu when clicking on a nav link
+    // ปิดเมนูมือถือเมื่อคลิกที่ลิงก์นำทาง
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Sticky Header
+    // ส่วนหัวแบบติดหน้าจอ
     const header = document.querySelector('header');
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
@@ -45,120 +45,49 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Active Navigation Link on Scroll
-    const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', function() {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    
-    // Testimonial Slider
-    const testimonialContainer = document.getElementById('testimonial-container');
-    const sliderDots = document.getElementById('slider-dots');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    
-    if (testimonialContainer) {
-        const testimonials = testimonialContainer.querySelectorAll('.testimonial');
-        let currentIndex = 0;
-        
-        // Create dots
-        testimonials.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-            sliderDots.appendChild(dot);
-        });
-        
-        // Update dots
-        function updateDots() {
-            const dots = sliderDots.querySelectorAll('.dot');
-            dots.forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
-        
-        // Go to specific slide
-        function goToSlide(index) {
-            currentIndex = index;
-            testimonialContainer.scrollLeft = testimonialContainer.clientWidth * currentIndex;
-            updateDots();
-        }
-        
-        // Next slide
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % testimonials.length;
-            goToSlide(currentIndex);
-        }
-        
-        // Previous slide
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-            goToSlide(currentIndex);
-        }
-        
-        // Event listeners for buttons
-        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-        
-        // Auto slide
-        let slideInterval = setInterval(nextSlide, 5000);
-        
-        // Pause auto slide on hover
-        testimonialContainer.addEventListener('mouseenter', () => {
-            clearInterval(slideInterval);
-        });
-        
-        testimonialContainer.addEventListener('mouseleave', () => {
-            slideInterval = setInterval(nextSlide, 5000);
-        });
-    }
-    
-    // Form Submission
+    // การส่งแบบฟอร์ม
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
+            // รับค่าจากฟอร์ม
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
+            const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Here you would typically send the form data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you, ${name}! Your request has been submitted. We will contact you shortly.`);
+            // ตรวจสอบความถูกต้องของข้อมูล (ตัวอย่างง่ายๆ)
+            if (!name || !email || !phone || !subject || !message) {
+                alert('กรุณากรอกข้อมูลให้ครบทุกช่อง');
+                return;
+            }
             
-            // Reset form
+            // ตรวจสอบรูปแบบอีเมล
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('กรุณากรอกอีเมลให้ถูกต้อง');
+                return;
+            }
+            
+            // ตรวจสอบรูปแบบเบอร์โทรศัพท์ (ตัวอย่างสำหรับเบอร์ไทย)
+            const phoneRegex = /^[0-9]{9,10}$/;
+            if (!phoneRegex.test(phone.replace(/[- ]/g, ''))) {
+                alert('กรุณากรอกเบอร์โทรศัพท์ให้ถูกต้อง');
+                return;
+            }
+            
+            // โดยปกติคุณจะส่งข้อมูลฟอร์มไปยังเซิร์ฟเวอร์
+            // สำหรับตัวอย่างนี้ เราจะแสดงแค่การแจ้งเตือน
+            alert(`ขอบคุณคุณ ${name} สำหรับข้อความ\nเราจะติดต่อกลับไปที่ ${email} หรือ ${phone} โดยเร็วที่สุด`);
+            
+            // รีเซ็ตฟอร์ม
             contactForm.reset();
         });
     }
     
-    // Newsletter Form
+    // ฟอร์มจดหมายข่าว
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -166,60 +95,96 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const email = newsletterForm.querySelector('input[type="email"]').value;
             
-            // Here you would typically send the email to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you for subscribing with ${email}! You will now receive our newsletter.`);
+            // ตรวจสอบความถูกต้องของอีเมล
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('กรุณากรอกอีเมลให้ถูกต้อง');
+                return;
+            }
             
-            // Reset form
+            // โดยปกติคุณจะส่งอีเมลไปยังเซิร์ฟเวอร์
+            // สำหรับตัวอย่างนี้ เราจะแสดงแค่การแจ้งเตือน
+            alert(`ขอบคุณสำหรับการสมัครด้วย ${email}! คุณจะได้รับจดหมายข่าวของเรา`);
+            
+            // รีเซ็ตฟอร์ม
             newsletterForm.reset();
         });
     }
     
-    // Scroll Reveal Animation (simple implementation)
-    const revealElements = document.querySelectorAll('[data-aos]');
+    // คำถามที่พบบ่อย (FAQ) Toggle
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // ปิด FAQ อื่นๆ
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // สลับสถานะของ FAQ ที่คลิก
+            item.classList.toggle('active');
+        });
+    });
+    
+    // Smooth Scrolling สำหรับลิงก์ภายใน
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const headerOffset = 100;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // แอนิเมชันเมื่อเลื่อนหน้าจอ
+    const animateElements = document.querySelectorAll('.contact-card, .form-container, .contact-info-container, .map-wrapper, .faq-item, .cta-container');
     
     function checkScroll() {
-        revealElements.forEach(element => {
+        animateElements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
             const windowHeight = window.innerHeight;
             
             if (elementTop < windowHeight - 100) {
-                element.classList.add('aos-animate');
+                element.classList.add('fade-in');
             }
         });
     }
     
-    // Initial check
-    checkScroll();
-    
-    // Check on scroll
-    window.addEventListener('scroll', checkScroll);
-    
-    // Add animation class for AOS elements
+    // เพิ่มคลาสแอนิเมชัน
     document.head.insertAdjacentHTML('beforeend', `
         <style>
-            [data-aos] {
+            .contact-card, .form-container, .contact-info-container, .map-wrapper, .faq-item, .cta-container {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
                 transition: opacity 0.8s ease, transform 0.8s ease;
             }
             
-            [data-aos].aos-animate {
+            .fade-in {
                 opacity: 1;
                 transform: translateY(0);
             }
-            
-            [data-aos-delay="100"].aos-animate {
-                transition-delay: 0.1s;
-            }
-            
-            [data-aos-delay="200"].aos-animate {
-                transition-delay: 0.2s;
-            }
-            
-            [data-aos-delay="300"].aos-animate {
-                transition-delay: 0.3s;
-            }
         </style>
     `);
+    
+    // ตรวจสอบครั้งแรก
+    setTimeout(checkScroll, 100);
+    
+    // ตรวจสอบเมื่อเลื่อนหน้าจอ
+    window.addEventListener('scroll', checkScroll);
 });

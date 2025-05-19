@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Home Butler Services</title>
+    <title>ติดต่อเรา - Elite Butler</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,336 +20,293 @@
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="index.html#services">บริการ</a></li>
+                <li><a href="index.html#about">เกี่ยวกับเรา</a></li>
+                <li><a href="index.html#testimonials">รีวิวจากลูกค้า</a></li>
+                <li><a href="index.html#pricing">ราคา</a></li>
+                <li><a href="contact.html" class="active">ติดต่อ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="animate-text">Luxury Home Management</h1>
-            <h2 class="animate-text delay-1">Professional Butler Services</h2>
-            <p class="animate-text delay-2">Experience the ultimate in home management with our elite butler services. We handle everything so you can focus on what matters most.</p>
-            <div class="hero-buttons animate-text delay-3">
-                <a href="#services" class="btn btn-primary">Our Services</a>
-                <a href="#contact" class="btn btn-secondary">Book Now</a>
+    <main>
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <h1>ติดต่อเรา</h1>
+                <p>เรายินดีให้คำปรึกษาและตอบคำถามทุกข้อสงสัยของคุณ</p>
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>โทรศัพท์</h3>
+                        <p>+66 (0) 2-555-7890</p>
+                        <p>+66 (0) 8-1234-5678</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>อีเมล</h3>
+                        <p>info@elitebutler.com</p>
+                        <p>support@elitebutler.com</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="icon-circle">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>ที่อยู่</h3>
+                        <p>123 อาคารเอ็มไพร์ ชั้น 50</p>
+                        <p>ถนนสาทร กรุงเทพฯ 10120</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero-image animate-fade-in">
-            <img src="https://via.placeholder.com/600x400" alt="Professional Butler">
-        </div>
-    </section>
+            <div class="contact-hero-image">
+                <img src="https://via.placeholder.com/600x400" alt="ทีมบริการลูกค้า">
+            </div>
+        </section>
 
-    <section id="services" class="services">
-        <div class="section-header">
-            <h2>Our Premium Services</h2>
-            <p>Comprehensive home management solutions tailored to your lifestyle</p>
-        </div>
-        <div class="services-container">
-            <div class="service-card" data-aos="fade-up">
-                <div class="service-icon">
-                    <img src="https://via.placeholder.com/80" alt="Home Management">
+        <section class="contact-form-section">
+            <div class="contact-container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>ส่งข้อความถึงเรา</h2>
+                        <p>กรอกแบบฟอร์มด้านล่างเพื่อติดต่อทีมงานของเรา เราจะติดต่อกลับภายใน 24 ชั่วโมง</p>
+                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">ชื่อ-นามสกุล</label>
+                                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">อีเมล</label>
+                                <input type="email" id="email" name="email" placeholder="กรุณากรอกอีเมล" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">เบอร์โทรศัพท์</label>
+                                <input type="tel" id="phone" name="phone" placeholder="กรุณากรอกเบอร์โทรศัพท์" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">หัวข้อ</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="" disabled selected>เลือกหัวข้อ</option>
+                                    <option value="general">สอบถามข้อมูลทั่วไป</option>
+                                    <option value="service">สอบถามบริการ</option>
+                                    <option value="quote">ขอใบเสนอราคา</option>
+                                    <option value="partnership">ความร่วมมือทางธุรกิจ</option>
+                                    <option value="other">อื่นๆ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ข้อความ</label>
+                            <textarea id="message" name="message" placeholder="กรุณากรอกข้อความ" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group form-checkbox">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy">ฉันยอมรับ<a href="#" class="privacy-link">นโยบายความเป็นส่วนตัว</a>และยินยอมให้เก็บข้อมูลของฉัน</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ส่งข้อความ</button>
+                    </form>
                 </div>
-                <h3>Home Management</h3>
-                <p>Complete oversight of your property, including maintenance scheduling and vendor management.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-icon">
-                    <img src="https://via.placeholder.com/80" alt="Event Planning">
-                </div>
-                <h3>Event Planning</h3>
-                <p>Sophisticated event coordination from intimate gatherings to grand celebrations.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-icon">
-                    <img src="https://via.placeholder.com/80" alt="Personal Assistance">
-                </div>
-                <h3>Personal Assistance</h3>
-                <p>Dedicated support for daily tasks, errands, and personal appointments.</p>
-            </div>
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-icon">
-                    <img src="https://via.placeholder.com/80" alt="Travel Arrangements">
-                </div>
-                <h3>Travel Arrangements</h3>
-                <p>Comprehensive travel planning and coordination for seamless journeys.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="about-image" data-aos="fade-right">
-            <img src="https://via.placeholder.com/500x600" alt="About Our Butler Service">
-        </div>
-        <div class="about-content" data-aos="fade-left">
-            <h2>Exceptional Service Since 2010</h2>
-            <p>Elite Butler provides the highest standard of home management services to discerning clients worldwide. Our professionally trained staff brings decades of experience in luxury hospitality.</p>
-            <p>We pride ourselves on discretion, attention to detail, and personalized service that anticipates your needs before you even express them.</p>
-            <div class="stats-container">
-                <div class="stat-item">
-                    <h3>12+</h3>
-                    <p>Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Happy Clients</p>
-                </div>
-                <div class="stat-item">
-                    <h3>50+</h3>
-                    <p>Expert Staff</p>
-                </div>
-            </div>
-            <a href="#contact" class="btn btn-primary">Learn More</a>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="section-header">
-            <h2>Client Testimonials</h2>
-            <p>What our distinguished clients say about our services</p>
-        </div>
-        <div class="testimonial-slider">
-            <div class="testimonial-container" id="testimonial-container">
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"The level of service provided by Elite Butler has transformed how our household operates. Their attention to detail is impeccable."</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/60" alt="Client">
-                            <div>
-                                <h4>Jonathan Pierce</h4>
-                                <p>CEO, Global Enterprises</p>
+                <div class="contact-info-container">
+                    <div class="contact-info-content">
+                        <h2>ช่องทางการติดต่ออื่นๆ</h2>
+                        <p>นอกจากแบบฟอร์มติดต่อ คุณสามารถติดต่อเราผ่านช่องทางต่อไปนี้</p>
+                        
+                        <div class="contact-info-item">
+                            <div class="icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info">
+                                <h3>เวลาทำการ</h3>
+                                <p>จันทร์ - เสาร์: 8:00 - 17:00 น.</p>
+                                <p>อาทิตย์: ปิดทำการ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div class="info">
+                                <h3>ฝ่ายบริการลูกค้า</h3>
+                                <p>โทร: +66 (0) 82-045-6165</p>
+                                <p>อีเมล: admin@thomeinspector.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="info">
+                                <h3>ฝ่ายธุรกิจ</h3>
+                                <p>โทร: +66 (0) 2-454-2043</p>
+                                <p>อีเมล: admin@thomeinspector.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media">
+                            <h3>ติดตามเรา</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-line"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"We've employed butler services for years, but none compare to the professionalism and discretion of Elite Butler's team."</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/60" alt="Client">
-                            <div>
-                                <h4>Sophia Williams</h4>
-                                <p>Art Collector</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <div class="testimonial-content">
-                        <p>"From managing our multiple properties to coordinating complex events, Elite Butler handles everything with grace and efficiency."</p>
-                        <div class="client-info">
-                            <img src="https://via.placeholder.com/60" alt="Client">
-                            <div>
-                                <h4>Alexander Chen</h4>
-                                <p>Real Estate Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="slider-controls">
-                <button id="prev-btn" class="slider-btn"><span>❮</span></button>
-                <div class="slider-dots" id="slider-dots"></div>
-                <button id="next-btn" class="slider-btn"><span>❯</span></button>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="pricing" class="pricing">
-        <div class="section-header">
-            <h2>Service Packages</h2>
-            <p>Tailored solutions to meet your specific requirements</p>
-        </div>
-        <div class="pricing-container">
-            <div class="pricing-card" data-aos="zoom-in">
-                <div class="pricing-header">
-                    <h3>Essential</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">1,500</span>
-                        <span class="period">/month</span>
+        <section class="map-section">
+            <div class="map-container">
+                <h2>ตำแหน่งที่ตั้ง</h2>
+                <div class="map-wrapper">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.9568263553!2d100.53872807495875!3d13.722476186959428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f01858d150f%3A0xf0100b33d0bef400!2sSathorn%20Square!5e0!3m2!1sen!2sth!4v1684394865680!5m2!1sen!2sth" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <div class="map-info-item">
+                        <i class="fas fa-subway"></i>
+                        <p>MRT สถานีบางแค - ทางออก 3 (เดินทางต่อ 10 นาที)</p>
+                    </div>
+                    <div class="map-info-item">
+                        <i class="fas fa-car"></i>
+                        <p>มีที่จอดรถสำหรับลูกค้า (กรุณาแจ้งล่วงหน้า)</p>
+                    </div>
+                    <div class="map-info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <p>กรุณานัดหมายล่วงหน้าก่อนเข้าพบ</p>
                     </div>
                 </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>Home Management</li>
-                        <li>Weekly Property Inspection</li>
-                        <li>Vendor Coordination</li>
-                        <li>Basic Errand Service</li>
-                        <li class="not-included">Event Planning</li>
-                        <li class="not-included">Travel Arrangements</li>
-                        <li class="not-included">24/7 Availability</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="btn btn-outline">Select Plan</a>
             </div>
-            <div class="pricing-card featured" data-aos="zoom-in" data-aos-delay="100">
-                <div class="pricing-header">
-                    <div class="featured-label">Most Popular</div>
-                    <h3>Premium</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">3,200</span>
-                        <span class="period">/month</span>
-                    </div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>Home Management</li>
-                        <li>Bi-weekly Property Inspection</li>
-                        <li>Vendor Coordination</li>
-                        <li>Comprehensive Errand Service</li>
-                        <li>Basic Event Planning</li>
-                        <li>Travel Arrangements</li>
-                        <li class="not-included">24/7 Availability</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="btn btn-primary">Select Plan</a>
-            </div>
-            <div class="pricing-card" data-aos="zoom-in" data-aos-delay="200">
-                <div class="pricing-header">
-                    <h3>Elite</h3>
-                    <div class="price">
-                        <span class="currency">$</span>
-                        <span class="amount">5,800</span>
-                        <span class="period">/month</span>
-                    </div>
-                </div>
-                <div class="pricing-features">
-                    <ul>
-                        <li>Home Management</li>
-                        <li>Weekly Property Inspection</li>
-                        <li>Vendor Coordination</li>
-                        <li>Unlimited Errand Service</li>
-                        <li>Full Event Planning</li>
-                        <li>Luxury Travel Arrangements</li>
-                        <li>24/7 Availability</li>
-                    </ul>
-                </div>
-                <a href="#contact" class="btn btn-outline">Select Plan</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <div class="contact-container">
-            <div class="contact-info" data-aos="fade-right">
-                <h2>Get In Touch</h2>
-                <p>Schedule a consultation with our team to discuss your specific needs and how we can enhance your lifestyle.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="icon">📍</div>
-                        <div>
-                            <h3>Address</h3>
-                            <p>123 Luxury Avenue, Suite 500<br>New York, NY 10001</p>
+        <section class="faq-section">
+            <div class="faq-container">
+                <h2>คำถามที่พบบ่อย</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>บริการของ Elite Butler ครอบคลุมพื้นที่ใดบ้าง?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Elite Butler ให้บริการครอบคลุมพื้นที่กรุงเทพมหานครและปริมณฑล รวมถึงหัวหิน พัทยา และภูเก็ต สำหรับพื้นที่อื่นๆ กรุณาติดต่อเราเพื่อสอบถามข้อมูลเพิ่มเติม</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="icon">📞</div>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+1 (212) 555-7890</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>ฉันสามารถปรับแพ็คเกจบริการให้เหมาะกับความต้องการของฉันได้หรือไม่?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ได้แน่นอน เรามีบริการแบบปรับแต่งตามความต้องการของลูกค้า กรุณากรอกแบบฟอร์มติดต่อหรือโทรหาเราเพื่อปรึกษาเกี่ยวกับความต้องการเฉพาะของคุณ</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="icon">✉️</div>
-                        <div>
-                            <h3>Email</h3>
-                            <p>inquiries@elitebutler.com</p>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>บัตเลอร์ของคุณมีประสบการณ์และได้รับการฝึกอบรมอย่างไร?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>บัตเลอร์ทุกคนของเราผ่านการฝึกอบรมอย่างเข้มงวดและมีประสบการณ์อย่างน้อย 5 ปีในอุตสาหกรรมการบริการระดับหรู พวกเขาได้รับการรับรองจากสถาบันบัตเลอร์นานาชาติและผ่านการตรวจสอบประวัติอย่างละเอียด</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>ฉันสามารถขอยกเลิกบริการได้หรือไม่?</h3>
+                            <span class="faq-toggle"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>ลูกค้าสามารถยกเลิกบริการได้โดยแจ้งล่วงหน้าอย่างน้อย 30 วัน สำหรับสัญญาระยะยาว หรือ 7 วันสำหรับบริการรายครั้ง กรุณาอ่านเงื่อนไขและข้อตกลงในสัญญาบริการสำหรับรายละเอียดเพิ่มเติม</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="contact-form" data-aos="fade-left">
-                <h2>Request Information</h2>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group">
-                        <select id="service" name="service" required>
-                            <option value="" disabled selected>Select Service</option>
-                            <option value="home-management">Home Management</option>
-                            <option value="event-planning">Event Planning</option>
-                            <option value="personal-assistance">Personal Assistance</option>
-                            <option value="travel-arrangements">Travel Arrangements</option>
-                            <option value="custom">Custom Package</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Tell us about your needs" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit Request</button>
-                </form>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-container">
+                <h2>พร้อมยกระดับการใช้ชีวิตของคุณ?</h2>
+                <p>ติดต่อเราวันนี้เพื่อปรึกษาเกี่ยวกับบริการบัตเลอร์ที่เหมาะกับความต้องการของคุณ</p>
+                <div class="cta-buttons">
+                    <a href="tel:+66025557890" class="btn btn-secondary"><i class="fas fa-phone-alt"></i> โทรหาเรา</a>
+                    <a href="#contact-form" class="btn btn-primary"><i class="fas fa-envelope"></i> ส่งข้อความ</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <div class="footer-container">
             <div class="footer-logo">
                 <h2>Elite<span>Butler</span></h2>
-                <p>Exceptional service for exceptional homes</p>
+                <p>บริการที่เป็นเลิศสำหรับบ้านที่พิเศษ</p>
             </div>
             <div class="footer-links">
                 <div class="footer-column">
-                    <h3>Services</h3>
+                    <h3>บริการ</h3>
                     <ul>
-                        <li><a href="#services">Home Management</a></li>
-                        <li><a href="#services">Event Planning</a></li>
-                        <li><a href="#services">Personal Assistance</a></li>
-                        <li><a href="#services">Travel Arrangements</a></li>
+                        <li><a href="index.html#services">การจัดการบ้าน</a></li>
+                        <li><a href="index.html#services">การวางแผนงานอีเวนต์</a></li>
+                        <li><a href="index.html#services">ผู้ช่วยส่วนตัว</a></li>
+                        <li><a href="index.html#services">การจัดการเดินทาง</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Company</h3>
+                    <h3>บริษัท</h3>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#pricing">Pricing</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html#about">เกี่ยวกับเรา</a></li>
+                        <li><a href="index.html#testimonials">รีวิวจากลูกค้า</a></li>
+                        <li><a href="index.html#pricing">ราคา</a></li>
+                        <li><a href="contact.html">ติดต่อ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Legal</h3>
+                    <h3>กฎหมาย</h3>
                     <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">เงื่อนไขการให้บริการ</a></li>
+                        <li><a href="#">นโยบายคุกกี้</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-newsletter">
-                <h3>Subscribe to Our Newsletter</h3>
-                <p>Stay updated with our latest services and offers</p>
+                <h3>สมัครรับจดหมายข่าว</h3>
+                <p>รับข่าวสารล่าสุดเกี่ยวกับบริการและข้อเสนอของเรา</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your Email Address" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <input type="email" placeholder="อีเมลของคุณ" required>
+                    <button type="submit" class="btn btn-primary">สมัคร</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Elite Butler Services. All Rights Reserved.</p>
+            <p>&copy; 2023 Elite Butler Services. สงวนลิขสิทธิ์ทั้งหมด</p>
             <div class="social-icons">
-                <a href="#" class="social-icon">FB</a>
-                <a href="#" class="social-icon">IG</a>
-                <a href="#" class="social-icon">TW</a>
-                <a href="#" class="social-icon">LI</a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="contact-script.js"></script>
 </body>
 </html>
