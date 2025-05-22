@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "pricing": "Pricing",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "company_name": "Home Inspection Co., Ltd.",
+    "address": "123 Bangkae, Bangkok 10110",
+    "phone": "Tel: 02-123-4567",
+    "email": "Email: info@homecheck.co.th",
+    "copyright": "© 2025 Home Inspection"
+  }
+}

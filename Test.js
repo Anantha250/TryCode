@@ -161,3 +161,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+async function setLanguage(lang) {
+  const res = await fetch(`${lang}.json`);
+  const data = await res.json();
+
+  document.getElementById("nav-home").textContent = data.navbar.home;
+  document.getElementById("nav-about").textContent = data.navbar.about;
+  document.getElementById("nav-services").textContent = data.navbar.services;
+  document.getElementById("nav-pricing").textContent = data.navbar.pricing;
+  document.getElementById("nav-contact").textContent = data.navbar.contact;
+
+  document.getElementById("footer-company").textContent = data.footer.company_name;
+  document.getElementById("footer-address").textContent = data.footer.address;
+  document.getElementById("footer-phone").textContent = data.footer.phone;
+  document.getElementById("footer-email").textContent = data.footer.email;
+  document.getElementById("footer-copy").textContent = data.footer.copyright;
+
+  localStorage.setItem("lang", lang);
+}
